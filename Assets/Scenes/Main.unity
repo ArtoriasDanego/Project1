@@ -523,6 +523,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8730471573591611585, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -582,17 +586,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1374656, y: -0.33237696}
+  m_Offset: {x: -0.01940018, y: -0.6185962}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.975}
+    oldSize: {x: 1.06, y: 1.9}
     newSize: {x: 2, y: 1.95}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6006112, y: 0.2820344}
+  m_Size: {x: 0.7794982, y: 0.5825646}
   m_EdgeRadius: 0
 --- !u!50 &1258775713
 Rigidbody2D:
@@ -670,7 +674,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3997926386678206787, guid: 4bf2736a5c69b4b4f8c520a7fae2370a, type: 3}
+  m_Sprite: {fileID: -4284403572306474878, guid: c25b43c68386b47a4893309e38ea3daa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -691,7 +695,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.08, y: -2.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -770,6 +774,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform_0
       objectReference: {fileID: 0}
+    - target: {fileID: 1782522966773879275, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -0.61098135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782522966773879275, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 0.1374898
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782522966773879275, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: 0.6082745
+      objectReference: {fileID: 0}
     - target: {fileID: 1893234387170409286, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -809,6 +825,10 @@ PrefabInstance:
     - target: {fileID: 1893234387170409286, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730471573591611585, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: jumpForce
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
