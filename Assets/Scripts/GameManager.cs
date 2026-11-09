@@ -9,14 +9,17 @@ public class GameManager : MonoBehaviour
 
     public Transform player;
     public TMP_Text scoreText;
-    public float fallDistance = 6f;   // wie weit unter der Kamera der Spieler fallen darf
+    public float fallDistance = 6f;
 
     private float score = 0f;
     private bool isGameOver = false;
 
+    public float startSpeed = 1f;
+    public float maxSpeed = 3f;
+    public float maxSpeedScore = 500f;   // ab diesem Score ist das Spiel maximal schnell
+
     void Awake()
     {
-        // Falls es schon einen GameManager gibt: diesen hier löschen
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -27,23 +30,39 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (isGameOver) return;
+    if (isGameOver || Time.timeScale == 0f) return;
 
-        // Score = höchste erreichte Höhe
-        score = Mathf.Max(score, player.position.y);
-        scoreText.text = Mathf.FloorToInt(score).ToString();
+    
+    score = Mathf.Max(score, player.position.y);
+    scoreText.text = Mathf.FloorToInt(score).ToString();
 
-        // Game Over, wenn der Spieler unter die Kamera fällt
-        if (player.position.y < Camera.main.transform.position.y - fallDistance)
-        {
-            GameOver();
-        }
+    
+    float difficulty = Mathf.Clamp01(score / maxSpeedScore);
+    Time.timeScale = Mathf.Lerp(startSpeed, maxSpeed, difficulty);
+
+    // Game Over, wenn der Spieler unter die Kamera fällt
+    if (player.position.y < Camera.main.transform.position.y - fallDistance)
+    {
+        GameOver();
+    }
     }
 
     public void GameOver()
     {
-        isGameOver = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    isGameOver = true;
+
+    Time.timeScale = 1f;
+
+    int finalScore = Mathf.FloorToInt(score);
+    int highscore = PlayerPrefs.GetInt("Highscore", 0);
+
+    if (finalScore > highscore)
+    {
+        PlayerPrefs.SetInt("Highscore", finalScore);  // neuen Rekord speichern
+        PlayerPrefs.Save();                           // sofort auf die Festplatte schreiben
+    }
+
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Damit andere Scripts den Score abfragen können
