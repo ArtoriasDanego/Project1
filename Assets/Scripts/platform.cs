@@ -13,13 +13,16 @@ public class platform : MonoBehaviour
                 Vector2 velocity = rb.linearVelocity;
                 velocity.y = jumpForce;
                 rb.linearVelocity = velocity;
+                
+                AudioSource jumpSound = collision.collider.GetComponent<AudioSource>();
+
+                if (jumpSound != null)
+                {
+                    jumpSound.pitch = Random.Range(0.9f, 1.1f);
+                    jumpSound.Play();
+                }
             }
         }
-
-        
-
-
-
     }
     void Update()
 {
