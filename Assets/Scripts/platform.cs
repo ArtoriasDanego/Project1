@@ -3,6 +3,9 @@ using UnityEngine;
 public class platform : MonoBehaviour
 {
     public float jumpForce = 10f;
+
+    public GameObject landingEffect;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.relativeVelocity.y <= 0f)
@@ -13,7 +16,13 @@ public class platform : MonoBehaviour
                 Vector2 velocity = rb.linearVelocity;
                 velocity.y = jumpForce;
                 rb.linearVelocity = velocity;
-                
+
+                if (landingEffect != null)
+                {
+                    Vector2 hitPoint = collision.GetContact(0).point;
+                    Instantiate(landingEffect, hitPoint, Quaternion.identity);
+                }
+
                 AudioSource jumpSound = collision.collider.GetComponent<AudioSource>();
 
                 if (jumpSound != null)

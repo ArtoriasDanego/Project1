@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   jumpForce: 10
+  landingEffect: {fileID: 6885692385306964043, guid: f41dd08841321405196cf197d98d2f6b, type: 3}
 --- !u!251 &-8509230619687246579
 PlatformEffector2D:
   m_ObjectHideFlags: 0

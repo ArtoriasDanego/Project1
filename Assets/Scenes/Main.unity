@@ -2278,6 +2278,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8730471573591611585, guid: 485045de629894377bb6cd7fc2c35f18, type: 3}
+      propertyPath: landingEffect
+      value: 
+      objectReference: {fileID: 6885692385306964043, guid: f41dd08841321405196cf197d98d2f6b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
