@@ -1697,8 +1697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PostProcessController
   volume: {fileID: 1702329514}
-  startIntensity: 0.2
-  maxIntensity: 0.5
+  startIntensity: 0.25
+  maxIntensity: 0.6
   maxScore: 500
 --- !u!1 &1770614221
 GameObject:
