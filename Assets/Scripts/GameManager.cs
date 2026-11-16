@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public float startSpeed = 1f;
     public float maxSpeed = 3f;
-    public float maxSpeedScore = 500f;   // ab diesem Score ist das Spiel maximal schnell
+    public float maxSpeedScore = 500f;
 
     void Awake()
     {

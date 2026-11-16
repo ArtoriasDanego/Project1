@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit");   // Im Editor passiert sonst nichts sichtbar
-        Application.Quit();  // Beendet das Spiel im fertigen Build
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
